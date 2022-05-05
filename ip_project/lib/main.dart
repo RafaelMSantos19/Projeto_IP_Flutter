@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double ip = 0.0;
   
   var divide;
-  var _valor ; 
+  var _valor = ' '; 
 
   void _calcula(){
     setState(() {
@@ -77,6 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           
             children:<Widget>[
+              Padding(padding:EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+
+              child:
               TextFormField(
                       decoration: const InputDecoration( hintText: 'Digite o IP'),
                       validator: (value) {
@@ -89,6 +92,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                   return null;
                             },
                       ),
+              ),
+              Padding(padding:EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+
+              child:
              ElevatedButton(
                   
                   style: TextButton.styleFrom(
@@ -100,12 +107,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         if (_formclasse.currentState!.validate()) {
                             _calcula();
                         }
-                   },
+                    },
                   child: Text('Calcular a Classe'),
               ),
+              ),
+              Padding(padding:EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+
+              child:
               //Text('Valor do IP e: $ip'),
              Text('O IP pertence a Classe: $_valor ', 
                               style: TextStyle(fontSize:20.0)),
+              ),
               
             ],
         ),
